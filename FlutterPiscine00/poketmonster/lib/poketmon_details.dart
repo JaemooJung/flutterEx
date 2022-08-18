@@ -9,12 +9,27 @@ class PocketonDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Poketmon Details'),
-      ),
-      body: Center(
-        child: Text('Hello World'),
+    return Container(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(
+        children: <Widget>[
+          Center(
+            child: CircleAvatar(
+              backgroundImage: NetworkImage(imageURL),
+              radius: 100.0,
+            ),
+          ),
+          const Divider(
+            thickness: 2,
+          ),
+          const Text("name"),
+          Text(pokemonName),
+          const Text("level"),
+          Text(pokemonLevel.toString()),
+          const Text("Body Blow"),
+          const Text("Electric shock"),
+          const Text("Attack"),
+        ],
       ),
     );
   }
