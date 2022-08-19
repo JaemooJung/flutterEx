@@ -12,6 +12,7 @@ class PocketonDetails extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(8.0),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Center(
             child: CircleAvatar(
@@ -22,13 +23,50 @@ class PocketonDetails extends StatelessWidget {
           const Divider(
             thickness: 2,
           ),
-          const Text("name"),
-          Text(pokemonName),
-          const Text("level"),
-          Text(pokemonLevel.toString()),
-          const Text("Body Blow"),
-          const Text("Electric shock"),
-          const Text("Attack"),
+          const Text(
+            "Name",
+            style: TextStyle(
+              fontSize: 30,
+            ),
+          ),
+          Text(
+            pokemonName,
+            style: const TextStyle(
+              fontSize: 50,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const Text(
+            "level",
+            style: TextStyle(
+              fontSize: 30,
+            ),
+          ),
+          Text(
+            'Lv.${pokemonLevel.toString()}',
+            style: const TextStyle(
+              fontSize: 50,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          Row (
+            children: const [
+              Icon(Icons.check_circle_outline),
+              Text("Body Blow"),
+            ],
+          ),
+          Row (
+            children: const [
+              Icon(Icons.check_circle_outline),
+              Text("Electric shock"),
+            ],
+          ),
+          Row (
+            children: const [
+              Icon(Icons.check_circle_outline),
+              Text("Attack"),
+            ],
+          ),
         ],
       ),
     );
